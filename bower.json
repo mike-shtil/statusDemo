@@ -1,0 +1,22 @@
+{
+  "name": "status_demo",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "mike-shtil <mike002@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/mike-shtil/statusDemo",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "fontawesome#^4.6.1",
+    "react": "^15.0.1"
+  }
+}
