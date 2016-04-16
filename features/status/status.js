@@ -1,305 +1,85 @@
 var Status = React.createClass({
   loadStatusFromServer: function() {
-    //temp mock of API call data
-    this.state.statusData = JSON.parse(`{
-    "result": {
-    "status_overall": {
-      "updated": "2016-04-16T11:50:03.324Z",
-      "status": "Operational",
-      "status_code": 100
-    },
-    "status": [
-      {
-        "id": "52cbb6a6e746d36b13000116",
-        "name": "Hosted Status Pages",
-        "updated": "2016-04-16T11:50:03.324Z",
-        "status": "Operational",
-        "status_code": 100,
-        "containers": [
-          {
-            "id": "52cbb6a5e746d36b13000063",
-            "name": "Amsterdam",
-            "updated": "2016-03-31T15:38:08.437Z",
-            "status": "Operational",
-            "status_code": 100
-          },
-          {
-            "id": "542228f0ef832a586c000062",
-            "name": "Ireland",
-            "updated": "2016-03-31T15:38:08.400Z",
-            "status": "Operational",
-            "status_code": 100
-          },
-          {
-            "id": "52cbb6a5e746d36b13000064",
-            "name": "Sydney",
-            "updated": "2016-03-31T15:38:08.399Z",
-            "status": "Operational",
-            "status_code": 100
-          },
-          {
-            "id": "52cbb6a5e746d36b13000065",
-            "name": "US-East",
-            "updated": "2016-03-31T15:38:08.400Z",
-            "status": "Operational",
-            "status_code": 100
-          },
-          {
-            "id": "52cbb6a5e746d36b13000062",
-            "name": "US-West",
-            "updated": "2016-03-31T15:38:08.399Z",
-            "status": "Operational",
-            "status_code": 100
-          }
-        ]
-      },
-      {
-        "id": "52db5d7217e785692a000091",
-        "name": "Status Notifications",
-        "updated": "2016-04-16T11:50:03.324Z",
-        "status": "Operational",
-        "status_code": 100,
-        "containers": [
-          {
-            "id": "52cbb6a5e746d36b13000063",
-            "name": "Amsterdam",
-            "updated": "2016-03-31T15:38:08.436Z",
-            "status": "Operational",
-            "status_code": 100
-          },
-          {
-            "id": "542228f0ef832a586c000062",
-            "name": "Ireland",
-            "updated": "2016-03-31T15:38:08.474Z",
-            "status": "Operational",
-            "status_code": 100
-          },
-          {
-            "id": "52cbb6a5e746d36b13000064",
-            "name": "Sydney",
-            "updated": "2016-03-31T15:38:08.436Z",
-            "status": "Operational",
-            "status_code": 100
-          },
-          {
-            "id": "52cbb6a5e746d36b13000065",
-            "name": "US-East",
-            "updated": "2016-03-31T15:38:08.473Z",
-            "status": "Operational",
-            "status_code": 100
-          },
-          {
-            "id": "52cbb6a5e746d36b13000062",
-            "name": "US-West",
-            "updated": "2016-04-05T05:51:31.898Z",
-            "status": "Operational",
-            "status_code": 100
-          }
-        ]
-      },
-      {
-        "id": "52cbb6a6e746d36b13000115",
-        "name": "Developer API",
-        "updated": "2016-04-16T11:50:03.324Z",
-        "status": "Operational",
-        "status_code": 100,
-        "containers": [
-          {
-            "id": "52cbb6a5e746d36b13000063",
-            "name": "Amsterdam",
-            "updated": "2016-03-31T15:38:08.509Z",
-            "status": "Operational",
-            "status_code": 100
-          },
-          {
-            "id": "542228f0ef832a586c000062",
-            "name": "Ireland",
-            "updated": "2016-03-31T15:38:08.437Z",
-            "status": "Operational",
-            "status_code": 100
-          },
-          {
-            "id": "52cbb6a5e746d36b13000064",
-            "name": "Sydney",
-            "updated": "2016-03-31T15:38:08.399Z",
-            "status": "Operational",
-            "status_code": 100
-          },
-          {
-            "id": "52cbb6a5e746d36b13000065",
-            "name": "US-East",
-            "updated": "2016-03-31T15:38:08.473Z",
-            "status": "Operational",
-            "status_code": 100
-          },
-          {
-            "id": "52cbb6a5e746d36b13000062",
-            "name": "US-West",
-            "updated": "2016-03-31T15:38:08.473Z",
-            "status": "Operational",
-            "status_code": 100
-          }
-        ]
-      },
-      {
-        "id": "52cbb6a6e746d36b13000114",
-        "name": "Dashboard",
-        "updated": "2016-04-16T11:50:03.324Z",
-        "status": "Operational",
-        "status_code": 100,
-        "containers": [
-          {
-            "id": "542228f0ef832a586c000062",
-            "name": "Ireland",
-            "updated": "2016-03-31T15:38:08.474Z",
-            "status": "Operational",
-            "status_code": 100
-          },
-          {
-            "id": "5519e2d62db0a64c4e0000d3",
-            "name": "Montreal",
-            "updated": "2016-03-31T15:38:08.509Z",
-            "status": "Operational",
-            "status_code": 100
-          },
-          {
-            "id": "52cbb6a5e746d36b13000062",
-            "name": "US-West",
-            "updated": "2016-03-31T15:38:08.436Z",
-            "status": "Operational",
-            "status_code": 100
-          }
-        ]
-      },
-      {
-        "id": "52db5d6817e785692a000090",
-        "name": "Website",
-        "updated": "2016-04-16T11:50:03.324Z",
-        "status": "Operational",
-        "status_code": 100,
-        "containers": [
-          {
-            "id": "52cbb6a5e746d36b13000063",
-            "name": "Amsterdam",
-            "updated": "2016-03-31T15:38:08.510Z",
-            "status": "Operational",
-            "status_code": 100
-          },
-          {
-            "id": "542228f0ef832a586c000062",
-            "name": "Ireland",
-            "updated": "2016-03-31T15:38:08.545Z",
-            "status": "Operational",
-            "status_code": 100
-          },
-          {
-            "id": "52cbb6a5e746d36b13000064",
-            "name": "Sydney",
-            "updated": "2016-03-31T15:38:08.510Z",
-            "status": "Operational",
-            "status_code": 100
-          },
-          {
-            "id": "52cbb6a5e746d36b13000065",
-            "name": "US-East",
-            "updated": "2016-03-31T15:38:08.546Z",
-            "status": "Operational",
-            "status_code": 100
-          },
-          {
-            "id": "52cbb6a5e746d36b13000062",
-            "name": "US-West",
-            "updated": "2016-03-31T15:38:08.546Z",
-            "status": "Operational",
-            "status_code": 100
-          }
-        ]
-      }
-    ],
-    "incidents": [],
-    "maintenance": {
-      "active": [],
-      "upcoming": [
-        {
-          "name": "Deploy Version 0.9.1",
-          "_id": "56fd449885aac0a834000007",
-          "datetime_open": "2016-03-31T15:39:04.216Z",
-          "datetime_planned_start": "2016-04-19T03:00:00.000Z",
-          "datetime_planned_end": "2016-04-19T03:15:00.000Z",
-          "messages": [
-            {
-              "details": "The next version of Status.io will be deployed to the production environment.",
-              "state": 100,
-              "status": 200,
-              "datetime": "2016-03-31T15:39:04.352Z"
-            }
-          ],
-          "containers_affected": [
-            {
-              "name": "Amsterdam",
-              "_id": "52cbb6a5e746d36b13000063"
-            },
-            {
-              "name": "Sydney",
-              "_id": "52cbb6a5e746d36b13000064"
-            },
-            {
-              "name": "US-East",
-              "_id": "52cbb6a5e746d36b13000065"
-            },
-            {
-              "name": "US-West",
-              "_id": "52cbb6a5e746d36b13000062"
-            },
-            {
-              "name": "Ireland",
-              "_id": "542228f0ef832a586c000062"
-            },
-            {
-              "name": "Montreal",
-              "_id": "5519e2d62db0a64c4e0000d3"
-            }
-          ],
-          "components_affected": [
-            {
-              "name": "Hosted Status Pages",
-              "_id": "52cbb6a6e746d36b13000116"
-            },
-            {
-              "name": "Status Notifications",
-              "_id": "52db5d7217e785692a000091"
-            },
-            {
-              "name": "Developer API",
-              "_id": "52cbb6a6e746d36b13000115"
-            },
-            {
-              "name": "Dashboard",
-              "_id": "52cbb6a6e746d36b13000114"
-            },
-            {
-              "name": "Website",
-              "_id": "52db5d6817e785692a000090"
-            }
-          ]
-        }
-      ]
-    }
-    }
-    }`);
+    $.ajax({
+      url: './api.json',
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        this.setState({data: data.result});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error('Error fetching JSON', status, err.toString());
+      }.bind(this)
+    });
   },
-  render: function() { return (
-<div class="status__wrapper container">
-  <section class="status__overall">
-    <h2>All Systems {'this.state.statusData.status__overall'}</h2>
-  </section>
-  <section class="status__breakdown">
-    <article class="breakdown__item" data-status="100">
+  componentDidMount: function() {
+    this.loadStatusFromServer();
+    setInterval(this.loadStatusFromServer, 500);
+  },
+  render: function() {
+    if(this.state){
+      return (
+        <div className="status__wrapper container">
+          <Status__overall data={this.state.data} />
+          <Status__statusItems data={this.state.data} />
+        </div>
+      );
+    } else {
+      return null;
+    }
+  }
+});
 
-    </article>
-  </section>
-</div>
+var Status__overall = React.createClass({
+  render: function () { return (
+    <section className="status__overall">
+      <h2>All Systems {this.props.data.status_overall.status}</h2>
+    </section>
 ); } });
+
+var Status__statusItems = React.createClass({
+  render: function () {
+    var statusItems = this.props.data.status.map(function(item, index){
+      return (
+        <article className="breakdown__item" data-status={item.status_code} key={index}>
+          <div className="col1">
+            <h3>{item.name}</h3>
+            <Status__itemLocations data={item.containers} />
+          </div>
+          <div className="col2">
+            <span class="item__status">
+              {item.status}
+            </span>
+          </div>
+        </article>
+      );
+    });
+
+    return (
+      <section className="status__breakdown">
+        {statusItems};
+      </section>
+    );
+  }
+});
+
+var Status__itemLocations = React.createClass({
+  render: function () {
+    var itemLocations = this.props.data.map(function(location, index){
+      return (
+      <li className="item__location" key={index}>
+        {location.name}
+      </li>
+      );
+    });
+
+    return (
+      <ul className="item__locations">
+      {itemLocations}
+      </ul>
+    );
+  }
+});
 
 //render
 ReactDOM.render(
