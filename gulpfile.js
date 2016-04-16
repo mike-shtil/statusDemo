@@ -6,7 +6,6 @@ gulp.task('default', ['scss', 'watch']);
 
 //watch Files For Changes
 gulp.task('watch', function() {
-  $.livereload.listen();
   gulp.watch('features/**/*.scss', ['scss']);
 });
 
@@ -20,5 +19,4 @@ gulp.task('scss', function() {
       .pipe($.sourcemaps.write({includeContent: true, sourceRoot: '.'}))
       //.pipe(cssnano({discardDuplicates: false})) //optional minification
       .pipe(gulp.dest('features'))
-      .pipe($.livereload())
 });

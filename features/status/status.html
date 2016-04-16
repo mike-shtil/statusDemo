@@ -1,12 +1,30 @@
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>statusDemo</title>
 
-  <link rel="stylesheet" href="../../node_modules/normalize.css/normalize.css">
+  <link rel="stylesheet" href="../../bower_components/normalize-css/normalize.css">
   <link rel="stylesheet" href="status.css">
+  <script src="../../bower_components/react/react.js"></script>
+  <script src="../../bower_components/react/react-dom.js"></script>
+  <script src="../../bower_components/babel/browser.js"></script>
 </head>
+
 <body>
+
+  <script type="text/babel" src="status.js"></script>
+
+  <header id="header">
+    <div class="container">
+      <img id="logo" src="../../assets/logo.png" alt="">
+    </div>
+  </header>
+  <div id="reactContent">
+
+  </div>
+
+  <hr>
   <header id="header">
     <div class="container">
       <img id="logo" src="../../assets/logo.png" alt="">
@@ -105,4 +123,5 @@
     </section>
   </div>
 </body>
+
 </html>
