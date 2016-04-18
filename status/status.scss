@@ -44,8 +44,13 @@ body {
     border-left: $color__text--negative solid 2px;
     padding: $padding;
     margin-bottom: 30px;
+    display: flex;
+    align-items: center;
     .status__overall__title {
         margin: 0;
+    }
+    .col1 {
+      flex: 1 1 auto;
     }
 }
 .breakdown__item {

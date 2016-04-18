@@ -14,7 +14,7 @@ var Status = React.createClass({
   },
   componentDidMount: function() {
     this.loadStatusFromServer();
-    setInterval(this.loadStatusFromServer, 500);
+    setInterval(this.loadStatusFromServer, 1000);
   },
   render: function() {
     if(this.state){
@@ -33,7 +33,12 @@ var Status = React.createClass({
 var Status__overall = React.createClass({
   render: function () { return (
     <section className="status__overall">
-      <h2 className="status__overall__title">All Systems {this.props.data.status_overall.status}</h2>
+      <div className="col1">
+        <h2 className="status__overall__title">All Systems {this.props.data.status_overall.status}</h2>
+      </div>
+      <div className="col2">
+        <span>{'Updated '+moment(this.props.data.status_overall.updated).toNow(true)+' ago'}</span>
+      </div>
     </section>
 ); } });
 
