@@ -7,7 +7,7 @@ ul {
     -webkit-padding-start: 0;
 }
 //params
-$color__accent: #6CA4EA; //#3F51B5;
+$color__accent: #226CC7; //#3F51B5;
 $color__text: #1A237E;
 $color__text--negative: #DCDCDC;
 $color__bg: #3A3A3A;
@@ -34,7 +34,8 @@ body {
 }
 //service
 .container {
-    max-width: 800px;
+    width: 800px;
+    max-width: calc(100% - 30px);
     margin: 0 auto;
 }
 //features
@@ -71,6 +72,7 @@ body {
     }
     .item__locations {
         display: flex;
+        flex-wrap: wrap;
         margin: 5px -5px;
         .item__location {
             color: $color__text--negative;

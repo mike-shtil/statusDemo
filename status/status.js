@@ -41,7 +41,7 @@ var Status__statusItems = React.createClass({
   render: function () {
     var statusItems = this.props.data.status.map(function(item, index){
       return (
-        <article className="breakdown__item" data-status={item.status_code} key={index}>
+        <article className="breakdown__item bounceInDown animated" data-status={item.status_code} key={index}>
           <div className="col1">
             <h3>{item.name}</h3>
             <Status__itemLocations data={item.containers} />
