@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>statusDemo</title>
+
+    <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="status/status.css">
+    <script src="bower_components/react/react.js"></script>
+    <script src="bower_components/react/react-dom.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/babel/browser.js"></script>
+    <script type="text/babel" src="status/status.js"></script>
+</head>
+
+<body>
+
+    <div id="lightbox" class="loading">
+        <div id="spinner">
+            <div class="cube cube1"></div>
+            <div class="cube cube2"></div>
+            <div class="cube cube3"></div>
+            <div class="cube cube4"></div>
+        </div>
+    </div>
+
+    <script>
+        (function(window, document) {
+            document.addEventListener("DOMContentLoaded", function(event) {
+                setTimeout(function() {
+                    document.getElementById('lightbox').className = '';
+                }, 600);
+            });
+
+        })(window, document);
+    </script>
+
+    <header id="header">
+        <img id="logo" src="../../assets/logo.png" alt="">
+    </header>
+    <div id="status"></div>
+
+</body>
+
+</html>
